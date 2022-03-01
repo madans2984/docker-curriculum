@@ -1,0 +1,110 @@
+---
+title: "Docker Container Basics pt. 2"
+author: Shree Madan
+date: 2022-03-01
+output: github_document
+time: 30
+reading: 
+---
+
+*Purpose*: The main use of Docker is through running containers. There are a few different
+commands which are helpful to know as you do this to maximize the possible use-cases
+of Docker.
+
+*Reading*: Sesto, pg. 15 (cheat sheet for all the commands used in this exercise)
+
+```{r setup, include=FALSE}
+# knitr options
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- -------------------------------------------------- -->
+
+__q1__ Running interactive containers
+
+*Hint*: Look back at part 1 of this exercise.
+
+When the ubuntu container was run the first time, it was almost immediately exited.
+The reason for this is that the primary process for this container expects user input
+and needs to be run in an interactive mode in order to run properly.
+
+To do this, let's use three new flags.
+
+* -i --> makes session interactive
+* -t --> allocates a pseudo-tty handler to the terminal allowing it to link your terminal to the Bash shell inside the container
+* --name --> can pass in a human readable name for your container.
+
+Try to use these tags to run your docker container. Set the name to ubuntu1 for ubuntu:18.04.
+
+```{bash docker-run-ex-1}
+
+```
+
+```{bash}
+# Run this cell to check if you correctly ran the container.
+docker ps
+```
+
+When this runs you should see how long the container has been running and no exit message.
+
+__q2__ Commands inside the container
+
+Here we are going to run the docker exec command so that you can execute commands within the container. 
+
+```{bash}
+#NOTE: No need to edit. Run this code to launch a shell inside your Ubuntu container
+
+docker exec -it ubuntu1 /bin/bash
+```
+
+You should see your prompt change to a root shell. The final argument of docker exec 
+is the command you want to execute. Since we want to start a Bash shell we used /bin/bash
+
+__q3__ Setting a text file
+
+```{bash}
+# Run this inside your root shell to create a text file.
+echo "Hello-world from ubuntu1!" > hello-world.txt
+```
+
+Container images are extremely minimal intentionally as this makes them easier to run 
+so usually they only contain the bare minimum that you need to run whatever application 
+the container is associated with. However, the *echo* command should be available.
+
+**OPTIONAL** Do the same thing but with ubuntu:19.04.
+
+```{bash}
+# To exit the bash shell run this
+exit
+```
+
+Let's check how long our container has been running
+
+```{bash}
+# Run this cell to check if the container is running properly.
+docker ps
+```
+
+Now inside the container let's execute a command which will allow us to display the message written earlier.
+
+```{bash}
+docker exec -it ubuntu1 cat hello-world.txt
+```
+
+__q4__ Stopping a container
+
+```{bash}
+# Complete this code
+docker *command* ubuntu1
+```
+
+__q5__ Cleaning our cache
+
+There are two commands to run to reset our machine entire and remove any unused containers and images.
+
+```{bash}
+docker *command* ubuntu1
+docker *command* *image ID*
+```
+
+

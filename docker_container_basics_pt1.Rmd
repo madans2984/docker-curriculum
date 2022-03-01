@@ -1,0 +1,89 @@
+---
+title: "Docker Container Basics pt. 1"
+author: Shree Madan
+date: 2022-03-01
+output: github_document
+time: 20
+reading: 
+---
+
+*Purpose*: The main use of Docker is through running containers. There are a few different
+commands which are helpful to know as you do this to maximize the possible use-cases
+of Docker.
+
+*Reading*: Sesto, pg. 15 (cheat sheet for all the commands used in this exercise)
+
+```{r setup, include=FALSE}
+# knitr options
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- -------------------------------------------------- -->
+
+__q1__ Downloading ubuntu 18.04 and ubuntu 19.04 containers.
+
+*Hint*: The formatting for getting specific versions of containers is *container name*:*version number*.
+So for example, you could do hello-world:latest or hello-world:1.0.
+
+```{bash docker-run-ex-1}
+# solution-begin
+docker pull ubuntu:18.04
+docker pull ubuntu:19.04
+# solution-end
+```
+
+```{bash}
+# Run this cell to check if you correctly downloaded the containers.
+docker images
+```
+You should see two repositories labels ubuntu and their corresponding tags being the version number.
+
+__q2__ Which version to use?
+
+In order to determine whcih version to use, we are going to see which was updated most recently.
+Execute the following cell for each of the versions.
+
+```{bash}
+# NOTE: This code is only partially complete. The argument of the command you are going to use 
+# is the IMAGE ID which you should have from the docker images command
+
+docker *insert command here* *put image ID here*
+
+# solution-begin
+docker inspect dcf4d4bef137
+docker inspect c88ac1f841b7
+# solution-end
+```
+
+Make some observations about each Ubuntu container here. 
+*Hint* Look for the created tag.
+
+**Observations**:
+
+
+Once we've seen the created dates, we can determine that the more recent version is 
+probably better to use. Generally speaking, if you know that a securtiy patch was fixed 
+or that a certain version is the only one compatible with the rest of your container, 
+you'll specify it.
+
+__q3__ 
+
+```{bash}
+# NOTE: No need to edit; run this to run the Ubuntu container
+docker run -d ubuntu:18.04
+```
+Let's break down the command we just ran. 
+
+* docker run is a command we have seen before which runs a container.
+* -d is a flag (we'll talk more about flags later) but it essentially acts like another argument
+specifying a variable. In this case, -d tells docker to run the container in the background.
+* ubuntu:18.04 is the container we are running.
+
+```{bash}
+# Run this cell to check if the container is ran properly.
+docker ps -a
+```
+Make some observations about the container we just ran from the docker ps -a output
+
+**Observations**:
+

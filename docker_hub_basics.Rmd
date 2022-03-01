@@ -79,8 +79,11 @@ already exists locally if not the Docker client will contact the Docker daemon.
 
 From here there are a few steps built into the run command (when using pre-built containers).
 
+For some context, Docker Daemon is the background process of the Docker Engine which keeps
+track of all the containers running on a single host.
+
 It will pull the image from Docker Hub which it then uses to create a new container.
 The output we see will be produced by that container.
 
-However to see that output in the terminal the Docker daemon needs to stream it 
+However to see that output in the terminal the Docker Daemon needs to stream it 
 to the client which then send it to the terminal.
