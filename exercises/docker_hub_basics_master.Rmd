@@ -25,7 +25,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### __q0__ Make a free Docker Hub account
 
-Following the instructions at https://hub.docker.com/ to make a free account.
+Follow the instructions at https://hub.docker.com/ to make a free account.
 
 Docker Hub is the space to access pre-built containers which you can use to 
 build your own containers. An example of this would be pulling an ubuntu container
