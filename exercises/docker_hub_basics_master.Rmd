@@ -39,6 +39,8 @@ Download and install Docker Desktop for your computer. Use [this page](https://w
 
 Run the following code chunk to run your first Docker command!
 
+*Hint*: To run a code chunk, you can either click the green right-arrow at the top-right of the code chunk, or locate your text cursor inside the chunk and press `Control + Enter`.
+
 ```{bash docker-run-ex-1}
 # NOTE: No need to edit; run this to try out Docker
 # solution-begin
