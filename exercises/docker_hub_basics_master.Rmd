@@ -37,8 +37,7 @@ Download and install Docker Desktop for your computer. Use [this page](https://w
 
 ### __q1__ Interacting with Docker Hub from the command line
 
-*Hint*: Most command line directives have the same format COMMAND SUBCOMMAND 
-(ex. docker run "container name" or docker image build)
+Run the following code chunk to run your first Docker command!
 
 ```{bash docker-run-ex-1}
 # NOTE: No need to edit; run this to try out Docker
@@ -48,6 +47,9 @@ docker run hello-world
 ```
 
 This should give you the output "Hello from Docker!"
+
+*Aside*: Most command line directives have the same format COMMAND SUBCOMMAND 
+(ex. docker run "container name" or docker image build)
 
 Later in this exercise, we will discuss the process which Docker took to generate the message
 
