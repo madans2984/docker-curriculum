@@ -56,32 +56,46 @@ Later in this exercise, we will discuss the process which Docker took to generat
 
 ### __q2__ Use the Docker Hub website to find a container
 
-On https://hub.docker.com/ search for the Hello-World container. 
+On [https://hub.docker.com/](https://hub.docker.com/) search for the `Hello-World` container. Answer the questions under *Observations* below.
+
+*Hint*: In Rstudio you need to hold `Control` / `Command` to click a link and open a browser tab.
+
+**Observations**
+
+<!-- task-begin -->
+- What `simple-tags` does the `Hello-World` container have? (Just listing them is enough)
+  - (Write your response here)
+- What top-level `shared-tags` does the `Hello-World` container have? (You don't need to list the sub-bulletted ones.)
+  - (Write your response here)
+<!-- task-end -->
+<!-- solution-begin -->
+- What `simple-tags` does the `Hello-World` container have? (Just listing them is enough)
+  - As of writing (2022-03-22): `linux`, `nanoserver-ltsc2022`, and `nanoserver-1809`
+- What top-level `shared-tags` does the `Hello-World` container have? (You don't need to list the sub-bulletted ones.)
+  - As of writing (2022-03-22): `latest`, `nanoserver`
+<!-- solution-end -->
 
 Using Docker Hub like this provides more through documentation for pre-built 
 containers. They often include information about running the container and the 
 necessary software or arguments. Identify a few of the simple and shared tags on 
 the website below as well as other observations of the information on the site.
 
-**Observations**:
-
-simple tags - 
-shared tags - 
-
 ### __q3__ Learn how Docker processes command line calls to Docker Hub
 
+```
 Unable to find image 'hello-world:latest' locally 
 latest: Pulling from library/hello-world 
 1b930d010525: Pull complete 
 Digest: sha256:4fe721ccc2e8dc7362278a29dc660d833570ec2682f4e 
 4194f4ee23e415e1064 
 Status: Downloaded newer image for hello-world:latest
+```
 
 This should be the output you see while running the Hello-World docker container.
 Let's break down some of these lines to get a better understanding of what the computer
 is running. 
 
-Unable to find image 'hello-world:latest' locally --> checks if the container 
+`Unable to find image 'hello-world:latest' locally` --> checks if the container 
 already exists locally if not the Docker client will contact the Docker daemon.
 
 From here there are a few steps built into the run command (when using pre-built containers).
