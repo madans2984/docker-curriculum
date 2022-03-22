@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!-- -------------------------------------------------- -->
 
-### __q0__ Make a free Docker Hub account:
+### __q0__ Make a free Docker Hub account
 
 Following the instructions at https://hub.docker.com/ to make a free account.
 
@@ -35,7 +35,7 @@ to your own container and then building software to run on it.
 
 Download and install Docker Desktop for your computer. Use [this page](https://www.docker.com/products/docker-desktop/) to find the download link relevant to your computer (e.g. Windows, Mac, or Linux).
 
-### __q1__ Interacting with Docker Hub from the command line
+### __q1__ Interact with Docker Hub from the command line
 
 Run the following code chunk to run your first Docker command!
 
@@ -54,7 +54,7 @@ This should give you the output "Hello from Docker!" It also gives you some help
 
 Later in this exercise, we will discuss the process which Docker took to generate the message
 
-### __q2__ Using the Docker Hub website
+### __q2__ Use the Docker Hub website to find a container
 
 On https://hub.docker.com/ search for the Hello-World container. 
 
@@ -68,7 +68,7 @@ the website below as well as other observations of the information on the site.
 simple tags - 
 shared tags - 
 
-### __q3__ How does Docker process command line calls to Docker Hub
+### __q3__ Learn how Docker processes command line calls to Docker Hub
 
 Unable to find image 'hello-world:latest' locally 
 latest: Pulling from library/hello-world 
