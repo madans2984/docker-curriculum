@@ -31,6 +31,10 @@ Docker Hub is the space to access pre-built containers which you can use to
 build your own containers. An example of this would be pulling an ubuntu container
 to your own container and then building software to run on it.
 
+### __q0.5__ Install docker
+
+Download and install Docker Desktop for your computer. Use [this page](https://www.docker.com/products/docker-desktop/) to find the download link relevant to your computer (e.g. Windows, Mac, or Linux).
+
 ### __q1__ Interacting with Docker Hub from the command line
 
 *Hint*: Most command line directives have the same format COMMAND SUBCOMMAND 
