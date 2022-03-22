@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!-- -------------------------------------------------- -->
 
-__q0__ Make a free Docker Hub account:
+### __q0__ Make a free Docker Hub account:
 
 Following the instructions at https://hub.docker.com/ to make a free account.
 
@@ -31,7 +31,7 @@ Docker Hub is the space to access pre-built containers which you can use to
 build your own containers. An example of this would be pulling an ubuntu container
 to your own container and then building software to run on it.
 
-__q1__ Interacting with Docker Hub from the command line
+### __q1__ Interacting with Docker Hub from the command line
 
 *Hint*: Most command line directives have the same format COMMAND SUBCOMMAND 
 (ex. docker run "container name" or docker image build)
@@ -47,7 +47,7 @@ This should give you the output "Hello from Docker!"
 
 Later in this exercise, we will discuss the process which Docker took to generate the message
 
-__q2__ Using the Docker Hub website
+### __q2__ Using the Docker Hub website
 
 On https://hub.docker.com/ search for the Hello-World container. 
 
@@ -61,7 +61,7 @@ the website below as well as other observations of the information on the site.
 simple tags - 
 shared tags - 
 
-__q3__ How does Docker process command line calls to Docker Hub
+### __q3__ How does Docker process command line calls to Docker Hub
 
 Unable to find image 'hello-world:latest' locally 
 latest: Pulling from library/hello-world 
