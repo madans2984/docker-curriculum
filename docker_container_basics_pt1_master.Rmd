@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!-- -------------------------------------------------- -->
 
-__q1__ Downloading ubuntu 18.04 and ubuntu 19.04 containers.
+__q1__ Download ubuntu 18.04 and ubuntu 19.04 containers.
 
 *Hint*: The formatting for getting specific versions of containers is *container name*:*version number*.
 So for example, you could do hello-world:latest or hello-world:1.0.
@@ -66,7 +66,7 @@ probably better to use. Generally speaking, if you know that a securtiy patch wa
 or that a certain version is the only one compatible with the rest of your container, 
 you'll specify it.
 
-__q3__ 
+__q3__ Run the ubuntu container.
 
 ```{bash}
 # NOTE: No need to edit; run this to run the Ubuntu container

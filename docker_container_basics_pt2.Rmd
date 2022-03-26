@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <!-- -------------------------------------------------- -->
 
-__q1__ Running interactive containers
+__q1__ Run interactive containers
 
 *Hint*: Look back at part 1 of this exercise.
 
@@ -60,7 +60,7 @@ docker exec -it ubuntu1 /bin/bash
 You should see your prompt change to a root shell. The final argument of docker exec 
 is the command you want to execute. Since we want to start a Bash shell we used /bin/bash
 
-__q3__ Setting a text file
+__q3__ Set a text file
 
 ```{bash}
 # Run this inside your root shell to create a text file.
@@ -91,14 +91,14 @@ Now inside the container let's execute a command which will allow us to display 
 docker exec -it ubuntu1 cat hello-world.txt
 ```
 
-__q4__ Stopping a container
+__q4__ Stop a container
 
 ```{bash}
 # Complete this code
 docker *command* ubuntu1
 ```
 
-__q5__ Cleaning our cache
+__q5__ Clean the cache
 
 There are two commands to run to reset our machine entire and remove any unused containers and images.
 
