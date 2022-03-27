@@ -1,0 +1,30 @@
+---
+title: "Common Flags"
+author: Shree Madan
+date: 2022-03-26
+output: github_document
+time: 15
+reading: 
+---
+
+*Purpose*: Learn some common docker flags
+
+*Reading*: This is the reading!
+
+```{r setup, include=FALSE}
+# knitr options
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- -------------------------------------------------- -->
+
+### __q1__ 
+
+-a : short for 'all' (ex. docker prune -a or docker ps -a)
+-d : will cause container to run in background (ex. docker run -d my-container )
+-rm : tells docker to remove the container from the cache as soon as its stopped
+-i : tells docker to run an interactive container
+-t : tells docker to open a pseudo terminal *needs to be run with -t* 
+-p : specifies port on which to run container
+-e : short for 'environment', used when defining elements of container environment
+-s : short for 'size' 
