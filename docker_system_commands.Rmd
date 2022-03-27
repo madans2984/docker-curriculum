@@ -1,0 +1,78 @@
+---
+title: "Docker System Commands"
+author: Shree Madan
+date: 2022-03-26
+output: github_document
+time: 
+reading: 
+---
+
+*Purpose*: Be able to run a container and check for basic system health/cache
+
+*Reading*: Sesto pg. 8-9
+
+```{r setup, include=FALSE}
+# knitr options
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- -------------------------------------------------- -->
+
+### __q1__ Define docker container
+
+What is a docker container? Why are they useful?
+
+As we've previously discussed, one of the key use-cases of docker is ensuring that an application will work on any machine by specifying the software versions and files.
+
+There are a few different levels to Docker so let's quickly breakdown a few different terms.
+
+Dockerfile --> A dockerfile is the source file for building a docker image. This is where your version and file control specifics will be outlines.
+Docker image --> An image is what the dockerfile is used to build. So an example would be if you download an app, the app itself would be the docker image.
+Docker container --> A container is one instance of an image. So using the previously example let's say you open the app and its running in the background, this would be the container. Once you close the app, the "container" is stopped. Next time you open the app, it will start a brand new container.
+
+***should I put an exercise here?***
+
+```{bash docker-run-ex-1}
+# NOTE: No need to edit; run this to try out Docker
+# solution-begin
+docker run hello-world
+# solution-end
+```
+
+Now we've seen the docker run command before. In this case what is "hello-world"? A dockerfile, an image, or a container? Why?
+
+(Write your response here)
+
+### __q2__ Check running containers
+
+```{bash}
+# write the command which will allow you to check which containers are running
+
+```
+
+**Observations**
+What are some observations you have about the result of this command?
+
+### __q3__ Check all containers
+
+As seen when we ran the last command, the output wasn't exactly what we would expect. This is because the previous question only looks at actively running containers.
+
+```{bash}
+# run the same command as the q2 but add -a at the end of it
+
+(Write command here) -a
+```
+Now we see a lot more information.
+
+Flags are an important way to customize docker commands to do what you need it to do.
+
+The "-a" tells docker to display all containers even those that have stopped running.
+
+As we continue on, we'll encounter more flags and will build a cheatsheet to some of the most used docker flags.
+
+### __q4__ Check images in system
+
+```{bash}
+# write the command which will allow you to see all downloaded images
+```
+
