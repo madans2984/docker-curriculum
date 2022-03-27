@@ -75,7 +75,7 @@ docker run -d ubuntu:18.04
 Let's break down the command we just ran. 
 
 * docker run is a command we have seen before which runs a container.
-* -d is a flag (we'll talk more about flags later) but it essentially acts like another argument
+* -d is a flag but it essentially acts like another argument
 specifying a variable. In this case, -d tells docker to run the container in the background.
 * ubuntu:18.04 is the container we are running.
 
