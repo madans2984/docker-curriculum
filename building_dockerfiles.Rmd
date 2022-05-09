@@ -1,0 +1,77 @@
+---
+title: "Building Dockerfiles"
+author: Shree Madan
+date: 2022-05-09
+output: github_document
+time: 20
+reading: 
+---
+
+*Purpose*: Be able to build an image given a Dockerfile
+
+*Reading*: Sesto, pg. 35-38
+
+```{r setup, include=FALSE}
+# knitr options
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- -------------------------------------------------- -->
+
+__q1__ FROM directive
+
+Typically, a Dockerfile begins with the FROM directive. It's used to specify the parent image (the starting point)
+
+The FROM directive takes a valid image name and a tag as arguments. If the tag is not specified, the latest tag will be used.
+Ex. FROM <image>:<tag> 
+
+Create the FROM directive using the ubuntu container with the 20.04 tag.
+
+```{bash}
+# NOTE: No need to run
+FROM ubuntu:20.04
+```
+
+__q2__ LABEL directive
+
+A LABEL is a key-value pair that can be used to add metadata to a Docker image. These labels can be used to organize the Docker images properly. An example would be to add the name of the author of the Dockerfile or the version of the Dockerfile.
+Ex. LABEL <key>=<value>
+
+```{bash}
+LABEL maintainer=sathsara@mydomain.com
+LABEL version=1.0
+LABEL environment=dev
+```
+__q3__ RUN directive
+
+The RUN directive is used to execute commands during the image build time. 
+RUN <command>
+
+```{bash}
+RUN apt-get update
+RUN apt-get install nginx -y
+```
+__q4__ CMD directive
+
+A Docker container is normally expected to run one process. A CMD directive is used 
+to provide this default initialization command that will be executed when a container 
+is created from the Docker image. A Dockerfile can execute only one CMD directive. 
+If there is more than one CMD directive in the Dockerfile, Docker  will execute only the last one.
+Ex. CMD ["executable","param1","param2","param3", ...]
+
+```{bash}
+CMD ["echo","Hello World"]
+```
+__q5__ ENTRYPOINT directive
+
+Similar to the CMD directive, the ENTRYPOINT directive is also used to provide this 
+default initialization command that will be executed when a container is created from the Docker image. The difference between the CMD directive and the ENTRYPOINT directive is that, unlike the CMD directive, we cannot override the ENTRYPOINT 
+command using the command-line parameters sent with the docker container 
+run command.
+Ex. ENTRYPOINT ["executable","param1","param2","param3", ...]
+
+```{bash}
+ENTRYPOINT ["echo","Hello"]
+CMD ["World"]
+```
+

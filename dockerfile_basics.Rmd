@@ -1,0 +1,42 @@
+---
+title: "Dockerfile Basics"
+author: Shree Madan
+date: 2022-05-09
+output: github_document
+time: 20
+reading: 
+---
+
+*Purpose*: Be able to build an image given a Dockerfile
+
+*Reading*: Sesto, pg. 45
+
+```{r setup, include=FALSE}
+# knitr options
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- -------------------------------------------------- -->
+
+__q1__ Create a docker image from a Dockerfile
+
+
+```{bash}
+# NOTE: No need to edit; there's already a sample Dockerfile in the folder which will run with this
+docker image build .
+```
+
+```{bash}
+# NOTE: No need to edit
+docker image list
+```
+
+
+__q2__ Run the docker build command again and make some observations
+
+```{bash}
+
+```
+
+**observations**
+Is there any difference when running it the second time?

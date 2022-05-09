@@ -1,0 +1,81 @@
+---
+title: "Further Directives pt2"
+author: Shree Madan
+date: 2022-05-09
+output: github_document
+time: 20
+reading: 
+---
+
+*Purpose*: Be able to identify what these different directives do in a given Dockerfile
+
+*Reading*: 
+
+```{r setup, include=FALSE}
+# knitr options
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- -------------------------------------------------- -->
+
+__q1__ USER directive
+
+Docker will use the root user as the default user of a Docker container. We can use 
+the USER directive to change this default behavior and specify a non-root user as 
+the default user of a Docker container. This is a great way to improve security by 
+running the Docker container as a non-privileged user. The username specified with 
+the USER directive will be used to run all subsequent RUN, CMD, and ENTRYPOINT directives in the Dockerfile. 
+
+Ex. USER <user>:<group>
+
+```{bash}
+USER www-data
+```
+
+
+__q2__ VOLUME directive
+
+In Docker, the data (for example, files, executables) generated and used by Docker containers will be stored within the container filesystem. When we delete the container, all the data will be lost. To overcome this issue, Docker came up with 
+the concept of volumes. Volumes are used to persist the data and share the data 
+between containers. We can use the VOLUME directive within the Dockerfile to create Docker volumes. Once a VOLUME is created in the Docker container, a mapping directory will be created in the underlying host machine. All file changes to 
+the volume mount of the Docker container will be copied to the mapped directory of the host machine. 
+Ex. VOLUME /path/to/volume1 /path/to/volume2 
+
+```{bash}
+VOLUME ["/var/log/apache2"]
+```
+__q3__ EXPOSE directive
+
+The EXPOSE directive is used to inform Docker that the container is listening on the 
+specified ports at runtime. We can use the EXPOSE directive to expose ports through 
+either TCP or UDP protocols. 
+Ex. EXPOSE <port> 
+
+__q4__ HEALTHCHECK directive
+
+Health checks are used in Docker to check whether the containers are running healthily. 
+For example, we can use health checks to make sure the application is 
+running within the Docker container. Unless there is a health check specified, 
+there is no way for Docker to say whether a container is healthy. This is very 
+important if you are running Docker containers in production environments. 
+Ex. HEALTHCHECK [OPTIONS] CMD command
+
+```{bash}
+HEALTHCHECK CMD curl -f http://localhost/ || exit 1
+```
+__q5__ ONBUILD directive
+
+The ONBUILD directive is used in the Dockerfile to create a reusable Docker image 
+that will be used as the base for another Docker image. As an example, we can 
+create a Docker image that contains all the prerequisites, such as dependencies and 
+configurations, in order to run an application. Then, we can use this 'prerequisite' 
+image as the parent image to run the application.
+While creating the prerequisite image, we can use the ONBUILD directive, 
+which will include the instructions that should only be executed when this 
+image is used as the parent image in another Dockerfile. ONBUILD instructions 
+will not be executed while building the Dockerfile that contains the ONBUILD directive, but only when building the child image.
+Ex. ONBUILD <instruction>
+
+```{bash}
+ONBUILD ENTRYPOINT ["echo","Running ONBUILD directive"]
+```

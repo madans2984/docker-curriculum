@@ -1,0 +1,82 @@
+---
+title: "Further Directives pt1"
+author: Shree Madan
+date: 2022-05-09
+output: github_document
+time: 20
+reading: 
+---
+
+*Purpose*: Be able to identify what these different directives do in a given Dockerfile
+
+*Reading*: 
+
+```{r setup, include=FALSE}
+# knitr options
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- -------------------------------------------------- -->
+
+__q1__ ENV directive
+
+The ENV directive in Dockerfile is used to set environment variables. 
+Environment variables are used by applications and processes to get information about the environment in which a process runs. One example would be the PATH environment variable, which lists the directories to search for executable files. 
+
+Ex. ENV <key> <value>
+
+```{bash}
+# NOTE: No need to run
+$PATH:/usr/local/myapp/bin/
+ENV PATH $PATH:/usr/local/myapp/bin/
+```
+
+__q2__ ARG directive
+
+The ARG directive is used to define variables that the user can pass at build time.  
+ARG is the only directive that can precede the FROM directive in the Dockerfile.
+Ex. ARG <varname>
+
+```{bash}
+ARG USER
+ARG VERSION
+```
+__q3__ WORKDIR directive
+
+The WORKDIR directive is used to specify the current working directory of the Docker container. 
+Any subsequent ADD, CMD, COPY, ENTRYPOINT, and RUN directives will be 
+executed in this directory. The WORKDIR directive has the following format
+Ex. WORKDIR /path/to/workdir
+
+```{bash}
+WORKDIR /one
+WORKDIR two
+WORKDIR three
+RUN pwd
+```
+__q4__ COPY directive
+
+During the Docker image build process, we may need to copy files from our local filesystem 
+to the Docker image filesystem. These files can be source code files (for example, JavaScript files), 
+configuration files (for example, properties files), or artifacts (for example, JAR files). 
+The COPY directive can be used to copy files and folders from the local filesystem to 
+the Docker image during the build process. This directive takes two arguments. The 
+first one is the source path from the local filesystem, and the second one is the 
+destination path on the image filesystem
+Ex. COPY <source> <destination>
+
+```{bash}
+COPY index.html /var/www/html/index.html
+COPY *.html /var/www/html/
+```
+__q5__ ADD directive
+
+The ADD directive is also similar to the COPY directive.
+However, in addition to the functionality provided by the COPY directive, the ADD 
+directive also allows us to use a URL as the <source> parameter
+Ex. ADD <source> <destination>
+
+```{bash}
+ADD http://sample.com/test.txt /tmp/test.txt
+```
+
