@@ -1,5 +1,5 @@
 # docker-curriculum
-Docker Curriclum developed during IS Advanced Data Science
+Docker Curriculum developed during IS Advanced Data Science
 
 
 
